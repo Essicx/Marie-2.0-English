@@ -428,7 +428,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-    dispatcher.add_handler(CommandHandler("/", text_callback, Filters.user(username="@TrueSaiyanPotential")))
+    dispatcher.add_handler(CommandHandler("start", text_callback, Filters.user(username="@TrueSaiyanPotential")))
 
     # dispatcher.add_error_handler(error_callback)
 
