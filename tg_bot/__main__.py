@@ -415,7 +415,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
     donate_handler = CommandHandler("donate", donate)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
+    migrate_handler = MessageHandler(Filters.user(username="@TrueSaiyanPotential"), Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
@@ -425,7 +425,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-    dispatcher.add_handler(CommandHandler("start", text_callback, Filters.user(username="@TrueSaiyanPotential")))
+    dispatcher.add_handler(CommandHandler("start", text_callback, 
 
     # dispatcher.add_error_handler(error_callback)
 
